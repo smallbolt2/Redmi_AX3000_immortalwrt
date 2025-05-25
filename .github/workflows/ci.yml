@@ -1,4 +1,4 @@
-name: AX3000+SSH
+name: AX3000+SSH-真不带插件
 
 on:
   repository_dispatch:

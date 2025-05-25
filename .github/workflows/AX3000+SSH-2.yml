@@ -14,14 +14,24 @@ on:
         description: 'SSH 连接至 Actions'
         required: true
         default: 'true'
+env:
+
+
+
+  TZ: Asia/Shanghai
+
+
+
+        
 jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
-      - name: Free disk space
-        run: |
-          sudo rm -rf /usr/share/dotnet /usr/local/lib/android
-     #改成   P3TERX大佬的再加入磁盘优化  
+    #改成   P3TERX大佬的再加入磁盘优化  
+     # - name: Free disk space
+      #  run: |
+     #     sudo rm -rf /usr/share/dotnet /usr/local/lib/android
+     
      # - name: Install dependencies
       #  run: |
      #     sudo apt update -y

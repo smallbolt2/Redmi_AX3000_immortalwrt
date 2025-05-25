@@ -145,7 +145,7 @@ jobs:
             CONFIG_PACKAGE_kmod-mppe=y
             
             CONFIG_PACKAGE_luci-app-ssr-plus=y
-            
+            CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NONE_V2RAY=y
             CONFIG_PACKAGE_luci-app-wol=y
             
             CONFIG_PACKAGE_ddns-go=y

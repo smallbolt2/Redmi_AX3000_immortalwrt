@@ -73,7 +73,7 @@ jobs:
 
 
 
-            CONFIG_PACKAGE_6in4=y
+
             
 
             CONFIG_PACKAGE_wireguard-tools=y
@@ -94,26 +94,18 @@ jobs:
             CONFIG_PACKAGE_iptables-mod-u32=y
             CONFIG_PACKAGE_iptables-mod-conntrack-extra=y
 
-            CONFIG_NETFILTER_NETLINK_GLUE_CT=y
+
             CONFIG_PACKAGE_luci-app-ua2f=y
            
-            CONFIG_PACKAGE_kmod-pptp=y
+
             CONFIG_PACKAGE_luci-theme-argon=y
-            CONFIG_PACKAGE_ppp-mod-pptp=y
-            CONFIG_PACKAGE_pptpd=y
-            CONFIG_PACKAGE_luci-proto-ppp=y
-            CONFIG_PACKAGE_pptp=y
-            CONFIG_PACKAGE_kmod-gre=y
-            CONFIG_PACKAGE_kmod-pppox=y
-            CONFIG_PACKAGE_kmod-ppp=y
-            CONFIG_PACKAGE_ppp=y
-            CONFIG_PACKAGE_kmod-mppe=y
+    
             
             CONFIG_PACKAGE_luci-app-ssr-plus=y
             CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NONE_V2RAY=y
             CONFIG_PACKAGE_luci-app-wol=y
             
-            CONFIG_PACKAGE_ddns-go=y
+           
           EOF
           make defconfig
           

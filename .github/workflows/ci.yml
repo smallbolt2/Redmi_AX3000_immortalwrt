@@ -1,13 +1,13 @@
 name: AX3000+SSH
 
 on:
- # repository_dispatch:
+  repository_dispatch:
   workflow_dispatch:
-    #inputs:
-    #  ssh:
-    #    description: 'SSH 连接至 Actions'
-     #   required: true
-     #   default: 'true'
+    inputs:
+      ssh:
+        description: 'SSH 连接至 Actions'
+        required: true
+        default: 'true'
 
 jobs:
   build:
@@ -152,11 +152,11 @@ jobs:
           EOF
           make defconfig
           
-    #  - name: SSH & Manual LUCI Configuration
-   #     uses: mxschmitt/action-tmate@v3
-    #    timeout-minutes: 130
-    #    with:
-   #       limit-access-to-actor: ${{ github.actor }}
+      - name: SSH & Manual LUCI Configuration
+        uses: mxschmitt/action-tmate@v3
+        timeout-minutes: 130
+        with:
+           limit-access-to-actor: ${{ github.actor }}
       - name: Download
         run: |
           make -j16 download

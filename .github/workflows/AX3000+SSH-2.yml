@@ -3,7 +3,7 @@ name: AX3000+SSH-2
 
 on:
   workflow_dispatch:
-  push:
+  #push:
 
 jobs:
   build:
@@ -77,6 +77,15 @@ jobs:
           TIME="$(curl "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" | jq -r .created_at)"
           echo "ci-$(date -d "${TIME}" -u +'%Y%m%d-%H%M%S')-${GITHUB_SHA:0:8}" >version
           sed -i "s|%U/targets/%S/packages|https://${OWNER}.github.io/${REPO}/${GITHUB_REF_NAME}/%R|" include/feeds.mk
+     
+          #加入SSR源码helloworld
+      
+      - name: Add helloworld feed
+        run: |
+          sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
+
+      
+      
       - name: Update and install feeds
         run: |
           ./scripts/feeds update -a
@@ -93,6 +102,10 @@ jobs:
             CONFIG_ALL_NONSHARED=y
             CONFIG_REPRODUCIBLE_DEBUG_INFO=y
             CONFIG_PACKAGE_luci=y
+            #后面的先用SSH手动连接来添加插件
+
+
+            
           EOF
           make defconfig
       - name: Download
